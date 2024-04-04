@@ -74,3 +74,87 @@ button:hover{
     background-color: orange;
     transform: translateY(-5px);
 }
+
+@media only screen and (max-width: 600px){
+    *{
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+        font-size: small;
+    }
+    
+    :root{
+        --winning-blocks: #ababab
+        --draw-blocks: #ff0000
+    }
+    body{
+        color: orange;
+        font-family: 'Times New Roman', Times, serif;
+        
+        
+    }
+    h1{
+        text-transform: uppercase;
+        font-size: 42px;
+        justify-content: center;
+        display: flex;
+        flex-direction: column;
+    }
+    .container{
+        padding: 20px;
+        height: 100vh;
+        width: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        background-color: black;
+    }
+    #gameboard{
+        width: 240px;
+        display: flex;
+        flex-wrap: wrap;
+        margin-top: 40px;
+        cursor: pointer;
+        flex-basis: fit-content;
+    
+    }
+    .box{
+        width: 80px;
+        height: 80px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: orange;
+        font-size: 160px;
+        border-right: 2px solid;
+        border-bottom: 2px solid;
+    }
+
+
+    .box:nth-child(3n){
+        border-right: none;
+    }
+    .box:nth-child(6) ~ .box{
+        border-bottom: none;
+    }
+    
+    button{
+        padding: 6px 12px;
+        margin: 8px 0;
+        color: black;
+        background-color: white;
+        align-items: center;
+        justify-content: center;
+        border-radius: 10px;
+        cursor: pointer;
+        font-size: 18px;
+        font-weight: 500;
+        transition: 0.5s transform;
+        
+    }
+    button:hover{
+        background-color: orange;
+        transform: translateY(-5px);
+    }
+}
