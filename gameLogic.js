@@ -4,6 +4,7 @@ let boxes = Array.from( document.getElementsByClassName('box'))
 
 let winnerIndicator = getComputedStyle(document.body).getPropertyValue('--winning-blocks')
 let drawIndicator = getComputedStyle(document.body).getPropertyValue('--draw-blocks')
+let  O_TEXT_AND_X_TEXT = getComputedStyle(document.body).getPropertyValue('--x-o')
 
 
 const O_TEXT = "O"
@@ -14,10 +15,12 @@ let count_playes = 0
 
 const startGame = () =>{
     boxes.forEach(box => box.addEventListener('click',boxClicked ))
+    
 }
 
 function boxClicked(e){
     const id = e.target.id
+    
 
     if(!spaces[id] && count_playes < 9){
         spaces[id] = currentPlayer
@@ -29,6 +32,7 @@ function boxClicked(e){
             let winBlocks = playerHasWon()
             count_playes = 11
             winBlocks.map(box => boxes[box].style.color = 'green')
+
             return  
         }
         count_playes++
